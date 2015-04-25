@@ -1,0 +1,34 @@
+{
+  "name": "gh-contributors-table",
+  "version": "0.0.0",
+  "description": "My funkadelic module",
+  "license": "MIT",
+  "repository": "stoeffel/gh-contributors-table",
+  "author": {
+    "name": "stoeffel",
+    "email": "schtoeffel@gmail.com",
+    "url": "schtoeffel.ch"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {
+    "1-liners": "0.0.8",
+    "async": "^0.9.0",
+    "meow": "^3.1.0",
+    "partition-all": "^1.0.1",
+    "request": "^2.55.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
