@@ -29,6 +29,7 @@
     "request": "^2.55.0"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "mockery": "^1.4.0"
   }
 }
