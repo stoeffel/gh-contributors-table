@@ -1,49 +1,8 @@
 # gh-contributors-table [![Build Status](https://travis-ci.org/stoeffel/gh-contributors-table.svg?branch=master)](https://travis-ci.org/stoeffel/gh-contributors-table)
 
-> My funkadelic module
+> Create a nice table of your contributors
 
-
-## Install
-
-```
-$ npm install --save gh-contributors-table
-```
-
-
-## Usage
-
-```js
-var ghContributorsTable = require('gh-contributors-table');
-
-ghContributorsTable('unicorns');
-//=> unicorns & rainbows
-```
-
-
-## API
-
-### ghContributorsTable(input, [options])
-
-#### input
-
-*Required*  
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`  
-Default: `false`
-
-Lorem ipsum.
-
-
-## License
-
-MIT © [stoeffel](http://schtoeffel.ch)
+## Example
 
  [stoeffel](https://github.com/stoeffel) | [stoeffel](https://github.com/stoeffel) | [stoeffel](https://github.com/stoeffel) | [stoeffel](https://github.com/stoeffel) 
 :--:|:--:|:--:|:--:
@@ -52,3 +11,23 @@ MIT © [stoeffel](http://schtoeffel.ch)
  [stoeffel](https://github.com/stoeffel) | [stoeffel](https://github.com/stoeffel) | [stoeffel](https://github.com/stoeffel) 
 :--:|:--:|:--:
  [![stoeffel](https://avatars.githubusercontent.com/u/1217681?v=3&s=80)](https://github.com/stoeffel) | [![stoeffel](https://avatars.githubusercontent.com/u/1217681?v=3&s=80)](https://github.com/stoeffel) | [![stoeffel](https://avatars.githubusercontent.com/u/1217681?v=3&s=80)](https://github.com/stoeffel) 
+
+
+## Install
+
+```
+$ npm install -g gh-contributors-table
+```
+
+
+## Usage
+
+```bash
+$ gh-contributors-table stoeffel hemanth bylexus >> readme.md # appends the readme with the generated table 
+
+```
+
+## License
+
+MIT © [stoeffel](http://schtoeffel.ch)
+
