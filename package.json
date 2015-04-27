@@ -1,6 +1,6 @@
 {
   "name": "gh-contributors-table",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Create a nice table with your contributors",
   "license": "MIT",
   "repository": "stoeffel/gh-contributors-table",
