@@ -19,10 +19,13 @@
     "test": "mocha"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "cli.js"
   ],
   "keywords": [
-    ""
+    "github",
+    "contributors",
+    "table"
   ],
   "dependencies": {
     "1-liners": "0.0.8",
