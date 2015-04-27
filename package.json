@@ -1,7 +1,7 @@
 {
   "name": "gh-contributors-table",
-  "version": "0.0.0",
-  "description": "My funkadelic module",
+  "version": "0.0.1",
+  "description": "Create a nice table with your contributors",
   "license": "MIT",
   "repository": "stoeffel/gh-contributors-table",
   "author": {
@@ -11,6 +11,9 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "bin": {
+    "gh-contributors-table": "./cli.js"
   },
   "scripts": {
     "test": "mocha"

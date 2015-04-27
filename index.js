@@ -39,24 +39,24 @@ module.exports = function(users, cb) {
 
 	var createRow = reduce(compose, [
 		function(data) {
-			return joinNL(map(join('|'))(data));
+			return joinNL(map(function(row) { return format('| :row |', { row: row }); })(map(join('|'))(data)));
 		},
 		function(arr) {
+			var newList = List([List(), List(), List()]);
+
 			return reduceFrom(function(prev, user) {
-				prev = prev.set(0, prev.get(0).push(format(' [:login](:html_url) ', user)));
+				prev = prev.set(0, prev.get(0).push(format(' [![:login](:avatar_url&s=80)](:html_url) ', user)));
 				prev = prev.set(1, prev.get(1).push(':--:'));
-				prev = prev.set(2, prev.get(2).push(format(' [![:login](:avatar_url&s=80)](:html_url) ', user)));
+				prev = prev.set(2, prev.get(2).push(format(' [:login](:html_url) ', user)));
 				return prev;
-			})(List([List(), List(), List()]))(arr);
+			})(newList)(arr);
 		}
 	]);
 
 	var createTable = reduce(compose, [
 		cb(null),
 		join2NL,
-		map(function(users) {
-			return createRow(users);
-		}),
+		map(createRow),
 		partition(4),
 		map(JSON.parse)
 	]);
