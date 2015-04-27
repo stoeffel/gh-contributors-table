@@ -8,7 +8,7 @@ it('should create a table', function (done) {
 		if (err) {
 			return assert.fail();
 		}
-		ghContributorsTable(['stoeffel', 'stoeffel', 'stoeffel', 'stoeffel', 'stoeffel', 'stoeffel', 'stoeffel'], function(err, table) {
+		ghContributorsTable(['stoeffel', 'stoeffel', 'stoeffel', 'stoeffel', 'stoeffel', 'stoeffel', 'stoeffel'], 4, function(err, table) {
 			if (err) {
 				return assert.fail();
 			}

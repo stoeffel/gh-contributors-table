@@ -24,6 +24,7 @@ $ npm install -g gh-contributors-table
 
 ```bash
 $ gh-contributors-table stoeffel hemanth bylexus >> readme.md # appends the readme with the generated table 
+$ gh-contributors-table --cols 2 stoeffel hemanth bylexus >> readme.md # default for cols is 4
 
 ```
 

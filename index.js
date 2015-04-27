@@ -34,7 +34,7 @@ function getRequestOptions(username) {
 	};
 }
 
-module.exports = function(users, cb) {
+module.exports = function(users, cols, cb) {
 	cb = curry2(cb);
 
 	var createRow = reduce(compose, [
@@ -57,7 +57,7 @@ module.exports = function(users, cb) {
 		cb(null),
 		join2NL,
 		map(createRow),
-		partition(4),
+		partition(cols),
 		map(JSON.parse)
 	]);
 
