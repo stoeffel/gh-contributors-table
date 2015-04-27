@@ -24,6 +24,8 @@
   "dependencies": {
     "1-liners": "0.0.8",
     "async": "^0.9.0",
+    "format-string": "^1.0.0",
+    "immutable": "^3.7.2",
     "meow": "^3.1.0",
     "partition-all": "^1.0.1",
     "request": "^2.55.0"

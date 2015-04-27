@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var meow = require('meow');
 var create = require('./');
 var cli = meow({

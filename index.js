@@ -4,12 +4,19 @@ var
 	compose = require('1-liners/compose'),
 	curry2 = require('1-liners/curry2'),
 	curry3 = require('1-liners/curry3'),
-	map = curry2(require('1-liners/map')),
 	reduce = require('1-liners/reduce'),
+	format = require('format-string'),
+	async = require('async'),
+	List = require('immutable').List,
+	request = require('request');
+
+var
+	map = curry2(require('1-liners/map')),
 	reduceFrom = curry3(require('1-liners/reduceFrom')),
 	join = curry2(require('1-liners/join')),
-	async = require('async'),
-	request = require('request');
+	partition = curry2(require('partition-all')),
+	joinNL = join('\n'),
+	join2NL = join('\n\n');
 
 function fetch(username, cb) {
 	request(getRequestOptions(username), function(err, response, body) {
@@ -30,17 +37,27 @@ function getRequestOptions(username) {
 module.exports = function(users, cb) {
 	cb = curry2(cb);
 
+	var createRow = reduce(compose, [
+		function(data) {
+			return joinNL(map(join('|'))(data));
+		},
+		function(arr) {
+			return reduceFrom(function(prev, user) {
+				prev = prev.set(0, prev.get(0).push(format(' [:login](:url) ', user)));
+				prev = prev.set(1, prev.get(1).push(':--:'));
+				prev = prev.set(2, prev.get(2).push(format(' [![:login](:avatar_url&s=80)](:url) ', user)));
+				return prev;
+			})(List([List(), List(), List()]))(arr);
+		}
+	]);
+
 	var createTable = reduce(compose, [
 		cb(null),
-		function(data) {
-			return join('\n')(map(join('|'))(data));
-		},
-		reduceFrom(function(prev, user) {
-			prev[0].push(' [' + user.login + '](' + user.url + ') ');
-			prev[1].push(':--:');
-			prev[2].push(' [![' + user.login + '](' + user.avatar_url + '&s=80)](' + user.url + ') ');
-			return prev;
-		})([[], [], []]),
+		join2NL,
+		map(function(users) {
+			return createRow(users);
+		}),
+		partition(4),
 		map(JSON.parse)
 	]);
 
