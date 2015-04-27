@@ -1,4 +1,4 @@
-# gh-contributors-table [![Build Status](https://travis-ci.org/stoeffel/gh-contributors-table.svg?branch=master)](https://travis-ci.org/stoeffel/gh-contributors-table)
+# gh-contributors-table
 
 > Create a nice table of your contributors
 
