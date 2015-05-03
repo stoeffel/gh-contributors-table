@@ -1,6 +1,6 @@
 # gh-contributors-table
 
-> Create a nice table of your contributors
+> Create a nice table of your contributors and add it to our README.md
 
 ## Example
 
