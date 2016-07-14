@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "1-liners": "^0.4.0",
-    "async": "^1.4.2",
+    "async": "^2.0.0",
     "format-string": "^1.0.0",
     "immutable": "^3.7.2",
     "meow": "^3.1.0",
