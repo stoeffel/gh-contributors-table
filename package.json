@@ -38,6 +38,6 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "mockery": "^1.4.0"
+    "mockery": "^2.0.0"
   }
 }
